@@ -215,8 +215,6 @@ h5 {
       width: 20%;
       padding: 30px 0;
       color: $mint;
-      .fa {
-      }
     }
   }
 
@@ -352,6 +350,65 @@ h5 {
           }
         }
       }
+    }
+
+    .items-2 {
+      position: relative;
+      .section-content {
+        display: flex;
+        .image-content {
+          width: 50%;
+        }
+        .text-content {
+          width: 50%;
+          margin: 0 100px;
+          li {
+            margin: 40px 0;
+          }
+        }
+      }
+      .cta-container {
+        position: absolute;
+        bottom: 20%;
+        left: 44%;
+        max-width: 90px;
+        background: $mint;
+        padding-top: 55px;
+        padding-bottom: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 35%, 65% 0);
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 35%, 65% 0);
+        color: $white;
+        line-height: 20px;
+        .icon {
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    .cta-form {
+      display: flex;
+      .image-content {
+        width: 50%;
+      }
+      .text-content {
+        width: 50%;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    border-top: 1px solid $grey;
+    margin-top: 50px;
+    .footer-item {
+      width: 25%;
+      margin: 30px;
+      list-style: none;
+    }
+    .logo-container {
+      width: 100%;
     }
   }
 }
