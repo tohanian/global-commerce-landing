@@ -142,6 +142,8 @@ $normal: 400;
 // Images
 $landing_img: '../assets/img/landing.jpg';
 $items-1_img: '../assets/img/items-1.jpg';
+$items-2_img: '../assets/img/man-at-computer.jpg';
+$cta-form_img: '../assets/img/living-room.jpg';
 
 p {
   font-size: 12.5px;
@@ -180,51 +182,114 @@ h5 {
   transform: scale(1, 0.93);
 }
 
+a {
+  text-decoration: none;
+  color: $black;
+  &:hover {
+    color: $mint;
+  }
+}
+
 .site-main {
   font-family: 'Roboto', sans-serif;
   background-color: $white;
   letter-spacing: 0.04em;
   color: $black;
 
-  .header {
-    display: flex;
-    justify-content: space-between;
+  .page-header {
+    background: $white;
     position: fixed;
-    background-color: $white;
+    z-index: 10;
     width: 100%;
-    font-size: 12px;
-    z-index: 1;
-    .logo-container {
-      width: 30%;
-      height: 50px;
-      padding-left: 20px;
-      img {
-        max-width: 100%;
-        max-height: 100%;
-      }
-    }
-    .header-items {
+    height: 60px;
+    transition: background-color 1.5s, color 1.5s, border 1.5s;
+    .header-content {
+      max-width: 980px;
+      margin: 0 auto;
       display: flex;
-      width: 50%;
-      padding: 30px 0;
-      li {
-        padding: 0 25px;
+      justify-content: space-between;
+      font-size: 12px;
+      .logo-container {
+        width: 30%;
+        height: 50px;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      .header-items {
+        display: flex;
+        width: 50%;
+        li {
+          padding: 25px 25px;
+          text-align: center;
+          a {
+            color: $black;
+            text-decoration: none;
+            &:hover {
+              color: $mint;
+            }
+          }
+        }
+      }
+      .cta-container {
+        padding: 18px 0;
+        a {
+          text-decoration: none;
+          cursor: pointer;
+          .cta-button {
+            padding: 7px 12px;
+            color: $mint;
+            text-align: right;
+            border-radius: 30px;
+            transition: background-color 0.4s, color 0.4s;
+            &:hover {
+              background: $mint;
+              color: $white;
+            }
+          }
+        }
       }
     }
-    .cta-container {
-      width: 20%;
-      padding: 30px 0;
-      color: $mint;
+    &.dark {
+      background: $black;
+      background-color: rgba(red($black), green($black), blue($black), 0.85);
+      border-bottom: $black solid 1px;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+      .header-items {
+        li {
+          a {
+            color: $white;
+          }
+        }
+      }
+      .cta-container {
+        a {
+          .cta-button {
+            background-color: $mint;
+            color: $white;
+            &:hover {
+              background-color: lighten($mint, 10%);
+            }
+            &:active {
+              // background-color: darken($mint, 4%);
+              -webkit-box-shadow: inset 1px 1px 5px #333;
+              -moz-box-shadow: inset 1px 1px 5px #333;
+              box-shadow: inset 1px 1px 5px #333;
+            }
+          }
+        }
+      }
     }
   }
 
   .main-content {
-    max-width: 1000px;
+    max-width: 980px;
     margin: 0 auto;
     .home {
       height: 100vh;
       position: relative;
-      padding-top: 80px;
+      top: 20vh;
       .text-image-container {
         height: 100%;
         display: flex;
@@ -233,8 +298,8 @@ h5 {
           width: 60%;
           .image-container {
             height: 70%;
+            max-height: 500px;
             background-image: url($landing_img);
-            // background: pink;
             background-repeat: no-repeat;
             background-size: cover;
             -webkit-clip-path: polygon(
@@ -250,24 +315,40 @@ h5 {
         .text-content {
           width: 40%;
           .text-body {
-            margin: 20% 60px 10% 60px;
+            margin: 30px;
+            // margin: 20% 60px 10% 60px;
             h1 {
               padding-bottom: 35px;
             }
             p {
-              padding-bottom: 100px;
+              padding-bottom: 75px;
             }
             .scroll-link {
               font-weight: $medium;
               font-size: 14px;
             }
           }
+          @media screen and (max-height: 700px) {
+            .text-body {
+              margin-top: 0;
+              p {
+                padding-bottom: 15px;
+              }
+            }
+            .cta-container {
+              position: static;
+              padding: 15px 10px;
+              width: auto;
+              max-width: 150px;
+              margin-top: 20px;
+            }
+          }
         }
       }
       .cta-container {
         position: absolute;
-        bottom: 20%;
-        left: 44%;
+        bottom: 35vh;
+        left: 35%;
         max-width: 90px;
         background: $mint;
         padding-top: 55px;
@@ -278,8 +359,12 @@ h5 {
         clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 35%, 65% 0);
         color: $white;
         line-height: 20px;
+        z-index: 1;
         .icon {
           padding-bottom: 10px;
+        }
+        &:hover {
+          background: lighten($mint, 10%);
         }
       }
     }
@@ -300,10 +385,13 @@ h5 {
 
     .items-1 {
       display: flex;
-      padding: 150px 0;
+      padding: 40px 0;
+      max-height: 700px;
+      height: 100vh;
       .image-content {
         width: 60%;
         position: relative;
+        margin-top: 90px;
         .image {
           height: 100%;
           width: auto;
@@ -325,10 +413,11 @@ h5 {
       }
       .text-content {
         width: 40%;
-        margin: 0 100px;
+        margin: 0 100px 0 95px;
         padding: 55px 0 135px 0;
         li {
           margin: 55px 0;
+          padding-left: 35px;
           position: relative;
           h4 {
             padding-bottom: 15px;
@@ -346,6 +435,7 @@ h5 {
     }
 
     .carousel {
+      padding-top: 100px;
       .header-container {
         width: 50%;
         margin: 0 auto;
@@ -367,15 +457,18 @@ h5 {
         display: flex;
         .carousel-image {
           width: 50%;
-          img {
-            width: 100%;
-            object-fit: cover;
+          li {
+            padding: 30px;
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
           }
         }
         .carousel-text {
           width: 50%;
           li {
-            padding: 100px;
+            padding: 100px 100px 100px 100px;
             h5 {
               margin-bottom: 10px;
             }
@@ -392,32 +485,60 @@ h5 {
 
     .items-2 {
       position: relative;
+      max-height: 600px;
+      margin-bottom: 20px;
       .section-content {
         display: flex;
+        margin-top: 50px;
         .image-content {
           width: 50%;
+          position: relative;
+          .image {
+            height: 100%;
+            width: auto;
+            background-image: url($items-2_img);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 80% 50%;
+          }
+          .clip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $white;
+            width: 100px;
+            height: 100px;
+            -webkit-clip-path: polygon(100% 0, 0 100%, 0 0);
+            clip-path: polygon(100% 0, 0 100%, 0 0);
+          }
         }
-        .text-content {
+        .text-content-container {
           width: 50%;
-          margin: 0 100px;
-          li {
-            margin: 40px 0;
+          background: $black;
+          color: $white;
+          margin-top: 100px;
+          .text-content {
+            margin: 0 100px 0 30px;
+            padding: 50px 0 50px 0;
+            li {
+              margin: 40px 0;
+            }
           }
         }
       }
       .cta-container {
         position: absolute;
-        bottom: 20%;
+        bottom: 10%;
         left: 44%;
         max-width: 90px;
-        background: $mint;
+        background: $white;
         padding-top: 55px;
         padding-bottom: 25px;
         padding-left: 25px;
         padding-right: 25px;
         -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 35%, 65% 0);
         clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 35%, 65% 0);
-        color: $white;
+        color: $black;
         line-height: 20px;
         .icon {
           padding-bottom: 10px;
@@ -427,11 +548,68 @@ h5 {
 
     .cta-form {
       display: flex;
+      padding-top: 100px;
+      padding-bottom: 100px;
       .image-content {
         width: 50%;
+        .image-container {
+          padding: 30px;
+          margin-top: 50px;
+          img {
+            width: 100%;
+          }
+        }
       }
       .text-content {
         width: 50%;
+        height: auto;
+        .text-container {
+          padding: 30px 100px 30px 30px;
+          margin-top: 50px;
+          h2 {
+            padding-bottom: 20px;
+          }
+          p {
+            padding-bottom: 60px;
+          }
+          .email-signup {
+            input[type='text'] {
+              height: 34px;
+              width: 70%;
+              border-radius: 2px;
+              border: none;
+              padding: 6px 40px 6px 6px;
+              outline: none;
+              font-size: 150%;
+            }
+            button[type='submit'] {
+              height: 29px;
+              width: 29px;
+              border-radius: 30px;
+              position: relative;
+              right: 43px;
+              top: -5px;
+              border: none;
+              background: $mint;
+              color: $white;
+              transition: 0.4s;
+              cursor: pointer;
+              i {
+                position: relative;
+                left: 1px;
+              }
+              &:hover {
+                background: lighten($mint, 10%);
+              }
+              &:active {
+                // background-color: darken($mint, 4%);
+                -webkit-box-shadow: inset 1px 1px 5px #333;
+                -moz-box-shadow: inset 1px 1px 5px #333;
+                box-shadow: inset 1px 1px 5px #333;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -442,11 +620,67 @@ h5 {
     margin-top: 50px;
     .footer-item {
       width: 25%;
-      margin: 30px;
+      margin: 40px;
       list-style: none;
+      h5 {
+        font-weight: $medium;
+        padding-bottom: 12px;
+      }
+      li {
+        color: $grey;
+        font-size: 80%;
+        padding-bottom: 8px;
+      }
+      a:hover {
+        color: $black;
+      }
     }
     .logo-container {
       width: 100%;
+    }
+    .email-signup {
+      padding-top: 10px;
+      input {
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        height: 22px;
+        padding: 3px 30px 3px 3px;
+        width: 70%;
+      }
+      button[type='submit'] {
+        height: 18px;
+        width: 18px;
+        border-radius: 30px;
+        position: relative;
+        left: -30px;
+        border: none;
+        background: $mint;
+        color: $white;
+        transition: 0.4s;
+        cursor: pointer;
+        i {
+          position: relative;
+          left: 1px;
+        }
+        &:hover {
+          background: lighten($mint, 10%);
+        }
+        &:active {
+          // background-color: darken($mint, 4%);
+          -webkit-box-shadow: inset 1px 1px 5px #333;
+          -moz-box-shadow: inset 1px 1px 5px #333;
+          box-shadow: inset 1px 1px 5px #333;
+        }
+      }
+    }
+
+    .sitemap,
+    .social-media {
+      width: 20%;
+    }
+    .email {
+      width: 50%;
     }
   }
 }

@@ -35,3 +35,13 @@ function selectItem(selectedItem) {
     });
   };
 }
+
+window.addEventListener('scroll', changeHeaderBackground);
+
+function changeHeaderBackground() {
+  if (window.scrollY !== 0) {
+    document.querySelector('.page-header').classList.add('dark');
+  } else {
+    document.querySelector('.page-header').classList.remove('dark');
+  }
+}

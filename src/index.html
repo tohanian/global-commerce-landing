@@ -8,21 +8,26 @@
   <body>
     <div class="site-main">
 
-      <div class="header-container">
-        <div class="header">
+
+      <div class="page-header">
+        <div class="header-content">
           <div class="logo-container">
-            <img class="logo" src="./assets/img/global-commerce-logo.png">
+            <img class="logo" src="./assets/img/global-commerce-logo.png" />
           </div>
           <ul class="header-items">
             <li><a href="#item1">Item 1</a></li>
             <li><a href="#item2">Item 2</a></li>
             <li><a href="#item3">Item 3</a></li>
-            <li><a href="#item4">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
-          <div class="cta-container">
-            Apply Today
-            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-          </div>
+            <div class="cta-container">
+              <a href=#contact>
+                <div class="cta-button">
+                  Apply Today
+                  <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </div>
+              </a>
+            </div>
         </div>
       </div>
 
@@ -35,23 +40,29 @@
                 <h1>Nunc blandit augue, a scelerisque pretium nec.</h1>
                 <p>Vivamus facilisis tortor augue. Sed eleifend finibus orci id convallis. Suspendisse convallis ante at diam pretium facilisis.</p>
                 <div class="scroll-link">
-                  <span>
-                    <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-                  </span>
-                  <span> Find out how </span>
+                  <a href="#item1">
+                    <span>
+                      <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                    </span>
+                    <span> Find out how </span>
+                  </a>
                 </div>
+
+                <a href="#contact">
+                  <div class="cta-container">
+                    <div class="icon">
+                      <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                    </div>
+                    Onze werkwijze
+                  </div>
+                </a>
+
               </div>
             </div>
             <div class="image-content">
               <div class="image-container">
               </div>
             </div>
-          </div>
-          <div class="cta-container">
-            <div class="icon">
-              <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-            </div>
-            Onze werkwijze
           </div>
         </div>
 
@@ -62,13 +73,15 @@
         >
           <h2>Morbi velit sed nunc ultrices. Phasellus tortor ipsum, efficitur at est in, maximus tellus.</h2>
           <div class="cta-link">
-            <span>
-              <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-            </span> <span>Find out how</span>
+            <a href="#item2">
+              <span>
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+              </span> <span>Find out how</span>
+            </a>
           </div>
         </div>
 
-        <div class="section items-1">
+        <div class="section items-1" id="item2">
           <div class="image-content">
             <div class="image"></div>
             <div class="clip"></div>
@@ -98,7 +111,7 @@
           </ul>
         </div>
 
-        <div class="section carousel">
+        <div class="section carousel" id="item3">
           <div class="header-container">
             <h2>Morbi vulputate velit sed nunc tristique ultrices. Phasellus tortor ipsum, efficitur at est in, venenatis maximus tellus.</h2>
           </div>
@@ -157,49 +170,70 @@
 
         </div>
 
-        <div class="section items-2">
+        <div class="section items-2" id="item4">
           <div class="section-content">
-          <div class="text-content">
-            <h5>Pellentesque eu tincidunt eros?</h5>
-            <ul>
-              <li>
-                <h3>Beautiful styling</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie eget risus blandit.</p>
-              </li>
-              <li>
-                <h3>Some content here</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestieblandit.</p>
-              </li>
-              <li>
-                <h3>The best marketing</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas moles tiela cinia blandit.</p>
-              </li>
-            </ul>
+            <div class="text-content-container">
+              <div class="text-content">
+                <h5>Pellentesque eu tincidunt eros?</h5>
+                <ul>
+                  <li>
+                    <h3>Beautiful styling</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie eget risus blandit.</p>
+                  </li>
+                  <li>
+                    <h3>Some content here</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestieblandit.</p>
+                  </li>
+                  <li>
+                    <h3>The best marketing</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas moles tiela cinia blandit.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="image-content">
+              <div class="image"></div>
+              <div class="clip"></div>
+            </div>
           </div>
-          <div class="image-content">
-            Some image here
-          </div>
-        </div>
           <div class="cta-container">
             Apply Today
             <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
           </div>
         </div>
 
-        <div class="section cta-form">
+        <div class="section cta-form" id="contact">
           <div class="image-content">
-            Some image here
-          </div>
-          <div class="text-content">
-            <div>
-              <span class="tag"></span>
+            <div class="image-container">
+              <img src="./assets/img/living-room.jpg">
             </div>
-            <h2>Nunc blandit pulvinar augue, a scelerisque erat pretium nec. Pellentesque eu tincidunt eros.</h2>
-            <p>Duis sodales mi eget quam varius, nec porta nisl efficitur. Suspendisse cursus malesuada lectus, id mollis velit volutpat eu. Donec velit sapien, varius eu efficitur sit amet, aliquam at ante.</p>
-            <form class="email-signup">
-              <input type="text" />
-              <input type="submit" />
-            </form>
+          </div>
+
+          <div class="text-content">
+            <div class="text-container">
+              <div>
+                <span class="tag"></span>
+              </div>
+              <h2>Nunc blandit pulvinar augue, a scelerisque erat pretium nec. Pellentesque eu tincidunt eros.</h2>
+              <p>Duis sodales mi eget quam varius, nec porta nisl efficitur. Suspendisse cursus malesuada lectus, id mollis velit volutpat eu. Donec velit sapien, varius eu efficitur sit amet, aliquam at ante.</p>
+              <form
+                class="email-signup"
+                action="https://formspree.io/toddohanian@gmail.com"
+                method="POST"
+              >
+                <input
+                  type="text"
+                  placeholder="@email.com"
+                  name="email"
+                />
+                <button type="submit">
+                  <span>
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </form>
+            </div>
+
           </div>
         </div>
       </div>
@@ -210,28 +244,36 @@
             <img class="logo" src="./assets/img/global-commerce-logo.png">
           </div>
         </div>
-        <div class="footer-item">
+        <div class="footer-item sitemap">
           <h5>Sitemap</h5>
-          <li>Home</li>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Contact</li>
+          <ul>
+            <a href="#"><li>Home</li></a>
+            <a href="#item1"><li>Item 1</li></a>
+            <a href="#item2"><li>Item 2</li></a>
+            <a href="#item3"><li>Item 3</li></a>
+            <a href="#contact"><li>Contact</li>
+          </ul>
         </div>
-        <div class="footer-item">
-          <h5>Another minor header</h5>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
+        <div class="footer-item social-media">
+          <h5>Social Media</h5>
+          <ul>
+            <a><li>LinkedIn</li></a>
+            <a><li>Facebook</li></a>
+            <a><li>Instagram</li></a>
+          </ul>
         </div>
-        <div class="footer-item">
+        <div class="footer-item email">
           <h5>Join our newsletter to stay up to date</h5>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenasmolestie eget risus lacinia blandit.
+            Lorem ipsum dolor sit amet acinia blandit.
           </p>
           <form class="email-signup">
-            <input type="text" />
-            <input type="submit" />
+            <input type="text" placeholder="Email" />
+            <button type="submit">
+              <span>
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
+              </span>
+            </button>
           </form>
         </div>
       </div>
