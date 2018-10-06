@@ -285,12 +285,12 @@ h5 {
     }
 
     .text {
-      padding: 0 55px;
+      padding: 80px 55px;
       width: 50%;
       margin: 0 auto;
       text-align: center;
       h2 {
-        padding-bottom: 30px;
+        padding: 60px 0;
       }
       .cta-link {
         font-weight: $medium;
@@ -300,14 +300,47 @@ h5 {
 
     .items-1 {
       display: flex;
+      padding: 150px 0;
       .image-content {
-        width: 50%;
+        width: 60%;
+        position: relative;
+        .image {
+          height: 100%;
+          width: auto;
+          background-image: url($items-1_img);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+        }
+        .clip {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          background: $white;
+          width: 80px;
+          height: 80px;
+          -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        }
       }
       .text-content {
-        width: 50%;
+        width: 40%;
         margin: 0 100px;
+        padding: 55px 0 135px 0;
         li {
-          margin: 40px 0;
+          margin: 55px 0;
+          position: relative;
+          h4 {
+            padding-bottom: 15px;
+          }
+          .icon {
+            position: absolute;
+            height: 52px;
+            width: 52px;
+            background: $black;
+            left: -120px;
+            top: 15px;
+          }
         }
       }
     }
@@ -334,19 +367,24 @@ h5 {
         display: flex;
         .carousel-image {
           width: 50%;
-          margin: 100px;
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
         }
         .carousel-text {
           width: 50%;
-          margin: 100px;
-          h5 {
-            margin-bottom: 10px;
-          }
-          h4 {
-            margin-bottom: 5px;
-          }
-          .cta-link {
-            font-size: 0.8em;
+          li {
+            padding: 100px;
+            h5 {
+              margin-bottom: 10px;
+            }
+            h4 {
+              margin-bottom: 5px;
+            }
+            .cta-link {
+              font-size: 0.8em;
+            }
           }
         }
       }

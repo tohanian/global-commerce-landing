@@ -1,4 +1,16 @@
 import '../styles/styles.scss';
+import 'zenscroll';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+(function() {
+  selectItem(0)();
+  AOS.init({
+    duration: 900,
+    once: true,
+    mirror: false
+  });
+})();
 
 // Event handlers
 
@@ -11,15 +23,15 @@ for (let i = 0; i < carouselSelectors.length; i++) {
 
 function selectItem(selectedItem) {
   return function() {
-    const images = document
-      .querySelector('.carousel-image')
-      .getElementsByTagName('li');
-    for (let i = 0; i < images.length; i++) {
-      if (i !== selectedItem) {
-        images[i].style.display = 'none';
-      } else {
-        images[i].style.display = 'block';
+    ['.carousel-image', '.carousel-text'].forEach(item => {
+      const items = document.querySelector(item).getElementsByTagName('li');
+      for (let i = 0; i < items.length; i++) {
+        if (i !== selectedItem) {
+          items[i].style.display = 'none';
+        } else {
+          items[i].style.display = 'block';
+        }
       }
-    }
+    });
   };
 }
