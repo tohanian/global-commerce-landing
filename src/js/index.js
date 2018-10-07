@@ -61,9 +61,12 @@ function changeHeaderBackground() {
 // Hamburger menu
 const hamburgerIcon = document.querySelector('.hamburger');
 hamburgerIcon.addEventListener('click', function(e) {
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
   if (hamburgerIcon.classList.contains('is-active')) {
     hamburgerIcon.classList.remove('is-active');
+    hamburgerMenu.classList.add('hidden');
   } else {
     hamburgerIcon.classList.add('is-active');
+    hamburgerMenu.classList.remove('hidden');
   }
 });

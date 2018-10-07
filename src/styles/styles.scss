@@ -843,6 +843,10 @@ a {
     }
   }
 
+  .hamburger {
+    display: none;
+    outline: none;
+  }
   .mobile-image-overlay,
   .mobile-image {
     display: none;
@@ -906,7 +910,7 @@ a {
           background-image: url($landing_img);
           background-repeat: no-repeat;
           background-size: cover;
-          background-position: 20% 50%;
+          background-position: 34% 50%;
           height: 100vh;
           width: 100%;
           position: absolute;
@@ -1018,11 +1022,38 @@ a {
       .site-map,
       .social-media,
       .email {
-        width: 50%;
+        width: 30%;
       }
       .email {
         display: none;
       }
     }
+  }
+}
+
+.hamburger-menu {
+  background: $black;
+  font-size: 150%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  width: 50%;
+  .menu-items {
+    a {
+      li {
+        padding: 10px;
+        border-bottom: 1px solid grey;
+        color: $white;
+      }
+      &:hover {
+        li {
+          color: $mint;
+        }
+      }
+    }
+  }
+  &.hidden {
+    display: none;
   }
 }
