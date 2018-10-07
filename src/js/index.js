@@ -33,6 +33,17 @@ function selectItem(selectedItem) {
         }
       }
     });
+
+    const selectors = document
+      .querySelector('.carousel-selectors')
+      .getElementsByTagName('li');
+    for (let i = 0; i < selectors.length; i++) {
+      if (i !== selectedItem) {
+        selectors[i].classList.remove('active');
+      } else {
+        selectors[i].classList.add('active');
+      }
+    }
   };
 }
 
