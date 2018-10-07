@@ -47,6 +47,7 @@ function selectItem(selectedItem) {
   };
 }
 
+// Scroll Events
 window.addEventListener('scroll', changeHeaderBackground);
 
 function changeHeaderBackground() {
@@ -56,3 +57,13 @@ function changeHeaderBackground() {
     document.querySelector('.page-header').classList.remove('dark');
   }
 }
+
+// Hamburger menu
+const hamburgerIcon = document.querySelector('.hamburger');
+hamburgerIcon.addEventListener('click', function(e) {
+  if (hamburgerIcon.classList.contains('is-active')) {
+    hamburgerIcon.classList.remove('is-active');
+  } else {
+    hamburgerIcon.classList.add('is-active');
+  }
+});
